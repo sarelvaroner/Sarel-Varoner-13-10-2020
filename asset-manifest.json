@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Sarel-Varoner-13-10-2020/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/Sarel-Varoner-13-10-2020/static/js/main.f16ae6f3.chunk.js",
+    "main.js.map": "/Sarel-Varoner-13-10-2020/static/js/main.f16ae6f3.chunk.js.map",
+    "runtime-main.js": "/Sarel-Varoner-13-10-2020/static/js/runtime-main.ef8702ba.js",
+    "runtime-main.js.map": "/Sarel-Varoner-13-10-2020/static/js/runtime-main.ef8702ba.js.map",
+    "static/js/2.12a6d874.chunk.js": "/Sarel-Varoner-13-10-2020/static/js/2.12a6d874.chunk.js",
+    "static/js/2.12a6d874.chunk.js.map": "/Sarel-Varoner-13-10-2020/static/js/2.12a6d874.chunk.js.map",
+    "index.html": "/Sarel-Varoner-13-10-2020/index.html",
+    "precache-manifest.b250f8b15e08d7e3f9dbff3681f7a303.js": "/Sarel-Varoner-13-10-2020/precache-manifest.b250f8b15e08d7e3f9dbff3681f7a303.js",
+    "service-worker.js": "/Sarel-Varoner-13-10-2020/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/Sarel-Varoner-13-10-2020/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.12a6d874.chunk.js.LICENSE.txt": "/Sarel-Varoner-13-10-2020/static/js/2.12a6d874.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef8702ba.js",
+    "static/js/2.12a6d874.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.f16ae6f3.chunk.js"
+  ]
+}
