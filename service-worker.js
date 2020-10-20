@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Sarel-Varoner-13-10-2020/precache-manifest.b250f8b15e08d7e3f9dbff3681f7a303.js"
+  "/Sarel-Varoner-13-10-2020/precache-manifest.7fc62000fe9eadf0356579c0f1b2513e.js"
 );
 
 self.addEventListener('message', (event) => {
