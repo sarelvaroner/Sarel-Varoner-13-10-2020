@@ -1,7 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
+
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -16,7 +17,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import AllInboxIcon from "@material-ui/icons/AllInbox";
-import { useDispatch, useSelector } from "react-redux";
+
 import { setSection, toggleMenu } from "../../redux/actions/ui";
 
 const drawerWidth = 240;
@@ -63,16 +64,6 @@ export const Sidebar = () => {
   const dispatch = useDispatch();
   const isSideBarOpen = useSelector((state) => state.ui.isSideBarOpen);
   let history = useHistory();
-
-  // var deletedCount = emails.reduce(
-  // 	function(previous, msg) {
-  // 		if (msg.tag === "deleted") {
-  // 			return previous + 1;
-  // 		}
-  // 		else {
-  // 			return previous;
-  // 		}
-  // 	}.bind(this), 0);
 
   const goTo = (section) => {
     dispatch(setSection(section));

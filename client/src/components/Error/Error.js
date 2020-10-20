@@ -1,4 +1,7 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -8,8 +11,7 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
-import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+
 import { cleanError } from "../../redux/actions/ui";
 import { setCurrentUser } from "../../redux/actions/user";
 
@@ -47,7 +49,6 @@ export default function Error() {
     setOpen(false);
     dispatch(cleanError());
     dispatch(setCurrentUser(null));
-
     history.push("/login");
   };
 

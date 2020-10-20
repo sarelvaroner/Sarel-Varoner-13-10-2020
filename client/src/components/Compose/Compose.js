@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import CloseIcon from "@material-ui/icons/Close";
 import SendIcon from "@material-ui/icons/Send";
-import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { saveEmail, saveEmailFail } from "../../redux/actions/emails";
 import { TextareaAutosize } from "@material-ui/core";
+
+import { saveEmail, saveEmailFail } from "../../redux/actions/emails";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    width:'100%',
-
+    width: "100%",
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginTop: theme.spacing(2),
-    width:'100%',
-
+    width: "100%",
   },
 
   header: {
     color: "orange",
     backgroundColor: "#092c09",
     textAlign: "center",
-    width:'100%',
+    width: "100%",
     padding: theme.spacing(2),
     borderRadius: "2%",
     display: "flex",
@@ -45,14 +45,11 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     margin: 0,
-    width:'100%',
-
+    width: "100%",
     border: "white",
   },
   container: {
-
-    width:'100%',
-
+    width: "100%",
     border: "white",
   },
 }));
@@ -62,21 +59,24 @@ export const Compose = () => {
   let history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
-  const [from, setFrom] = useState(user);
-  const [fromError, setFromError] = useState(false);
-  const [fromErrorMessage, setFromErrorMessage] = useState("");
+
   const [to, setTo] = useState("");
-  const [toError, setToError] = useState(false);
-  const [toErrorMessage, setToErrorMessage] = useState("");
+  const [from, setFrom] = useState(user);
   const [subject, setSubject] = useState("");
   const [content, setContent] = useState("");
+  const [fromErrorMessage, setFromErrorMessage] = useState("");
+  const [toErrorMessage, setToErrorMessage] = useState("");
+  const [toError, setToError] = useState(false);
+  const [fromError, setFromError] = useState(false);
 
   const onToChange = (val) => {
     setTo(val);
   };
+
   const onFromChange = (val) => {
     setFrom(val);
   };
+  
   const isToValid = () => {
     const result = to.length === 0;
     setToError(result);
@@ -125,7 +125,7 @@ export const Compose = () => {
         <span>New Email</span>
         <SendIcon className={classes.icon} onClick={onSubmit} />
       </div>
-      <div  className={classes.container}>
+      <div className={classes.container}>
         <TextField
           error={fromError}
           helperText={fromErrorMessage}

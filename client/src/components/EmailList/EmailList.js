@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useDispatch, useSelector } from "react-redux";
+
 import List from "@material-ui/core/List";
 import Pagination from "@material-ui/lab/Pagination";
 
-import { getEmails, setSkip } from "../../redux/actions/emails";
 import { EmailListItem } from "../EmailListItem/EmailListItem";
 import Error from "../Error/Error";
-import { useDispatch, useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 import { setUpdateUser } from "../../redux/actions/ui";
+import { getEmails, setSkip } from "../../redux/actions/emails";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
   },
-
-
   centered: {
     position: "fixed",
     top: "50%",
@@ -58,11 +57,13 @@ const useStyles = makeStyles((theme) => ({
 
 export const EmailList = () => {
   const dispatch = useDispatch();
+  const classes = useStyles();
+  
   const emails = useSelector((state) => state.emails.emails);
   const loading = useSelector((state) => state.ui.loading);
   const error = useSelector((state) => state.ui.error);
   const userId = useSelector((state) => state.user.currentUser);
-  const classes = useStyles();
+
   const [page, setPage] = useState(1);
   const limit = 11;
 

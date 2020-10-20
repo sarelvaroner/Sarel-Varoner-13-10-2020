@@ -33,7 +33,7 @@ router.get("/emails/inbox", auth, async (req, res) => {
     const skip = parseInt(req.query.skip);
 
     const emails = data
-      .filter((email) => email.from === req.userId && !email.deleted)
+      .filter((email) => email.to === req.userId && !email.deleted)
       .slice(skip, skip + limit);
     res.send(emails);
   } catch (e) {
@@ -45,7 +45,7 @@ router.get("/emails/sent", auth, async (req, res) => {
   try {
     const skip = parseInt(req.query.skip);
     const emails = data
-      .filter((email) => email.to === req.userId && !email.deleted)
+      .filter((email) => email.from === req.userId && !email.deleted)
       .slice(skip, skip + limit);
     res.send(emails);
   } catch (e) {

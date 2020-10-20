@@ -1,20 +1,19 @@
 import React from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import * as moment from "moment";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { Divider } from "@material-ui/core";
-import * as moment from "moment";
 import CloseIcon from "@material-ui/icons/Close";
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
     minHeight: "95vh",
   },
-
   pos: {
     marginBottom: 12,
     margin: 5,
@@ -31,7 +30,6 @@ const useStyles = makeStyles({
   content: {
     margin: 20,
     display: "flex",
-    // justifyContent: "center",
     padding: "10px",
   },
   icon: {
@@ -48,17 +46,16 @@ const useStyles = makeStyles({
 
 export default function Email() {
   let history = useHistory();
-
   const classes = useStyles();
   let { id } = useParams();
   const emails = useSelector((state) => state.emails.emails);
+
   const index = emails.findIndex((item) => item.id === id);
   const email = emails[index];
 
   return (
     <Card className={classes.root} variant="outlined">
       <CloseIcon className={classes.icon} onClick={() => history.goBack()} />
-
       <CardContent>
         <Typography variant="h5" component="h2" className={classes.pos}>
           {email.subject}
@@ -73,7 +70,6 @@ export default function Email() {
           </Typography>
         </div>
         <Divider />
-
         <div className={classes.content}>
           <Typography variant="body2" component="p">
             {email.content}

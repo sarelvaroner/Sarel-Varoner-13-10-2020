@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteEmail, setSelectedEmail } from "../../redux/actions/emails";
+import * as moment from "moment";
+
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
@@ -8,8 +10,8 @@ import Box from "@material-ui/core/Box";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
-import * as moment from "moment";
+
+import { deleteEmail, setSelectedEmail } from "../../redux/actions/emails";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,17 +20,14 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 0,
     "@media (max-width:600px)": {
       flexDirection: "column",
-      // width: "-webkit-fill-available",
     },
   },
   texts: {
     width: '350px',
     "@media (max-min:600px)": {
-      // width: '100px',
     },
     "@media (max-width:600px)": {
       width: '100px',
-
       padding: 0,
       margin: 0,
     },
@@ -48,9 +47,9 @@ const useStyles = makeStyles((theme) => ({
 
 export const EmailListItem = ({ email }) => {
   let history = useHistory();
-
   const classes = useStyles();
   const dispatch = useDispatch();
+
 
   const deleteMessage = (id, e) => {
     try {
@@ -78,7 +77,6 @@ export const EmailListItem = ({ email }) => {
               key={field + Math.random()}
               className={classes.texts}
               primary={
-                // <div sclassName={classes.fonts}tyle={{  whiteSpace: "nowrap" }}>
                 <Box
                   component="div"
                   my={2}
@@ -88,7 +86,6 @@ export const EmailListItem = ({ email }) => {
                 >
                   {index !== 3 ? field : moment(field).format("MMM-D")}
                 </Box>
-                // </div>
               }
             />
           )
