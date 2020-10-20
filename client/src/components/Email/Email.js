@@ -12,9 +12,7 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 500,
     minHeight: "95vh",
-    // padding: '10px'
   },
 
   pos: {
@@ -26,6 +24,9 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     margin: 2,
     padding: "10px",
+    "@media (max-width:600px)": {
+      flexDirection: "column",
+    },
   },
   content: {
     margin: 20,

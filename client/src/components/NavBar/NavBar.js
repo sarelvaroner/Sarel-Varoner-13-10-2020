@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
-    width: "100%",
+    // width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",
@@ -118,6 +118,28 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
   },
+  newEmailBotton: {
+    whiteSpace: "nowrap",
+    // width:theme.spacing(1),
+    "@media (max-width:600px)": {
+      width: '-webkit-fill-available'
+    },
+    "@media (min-width:600px)": {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1rem",
+
+    },
+    marginRight: theme.spacing(1),
+    padding: theme.spacing(2),
+    color: "orange",
+    backgroundColor: "#204720",
+    "&:hover": {
+      color: "#204720",
+      backgroundColor: "orange",
+    },
+  },
 }));
 
 export const NavBar = () => {
@@ -135,8 +157,6 @@ export const NavBar = () => {
   useEffect(() => {
     setUserId(user);
   }, [user]);
-
-
 
   useEffect(() => {
     try {
@@ -188,10 +208,10 @@ export const NavBar = () => {
           {user && (
             <Fab
               variant="extended"
-              className={classes.extendedIcon}
+              className={classes.newEmailBotton}
               onClick={() => history.push("/compose")}
             >
-              <AddIcon />
+                <AddIcon />
               New Email
             </Fab>
           )}

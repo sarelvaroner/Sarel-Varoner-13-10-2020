@@ -4,7 +4,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { PrivateRoute } from "./components/PrivateRout/PrivateRout";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { NavBar } from "./components/NavBar/NavBar";
-import { CircularProgress, makeStyles } from "@material-ui/core";
+import {  makeStyles } from "@material-ui/core";
 import { Inbox } from "./components/Inbox/Inbox";
 import { Sent } from "./components/Sent/Sent";
 import { All } from "./components/All/All";
@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    "@media (max-width:600px)": {
+      padding:0,
+    },
   },
 }));
 

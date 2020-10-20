@@ -12,19 +12,21 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
+    width:'100%',
+
   },
   textField: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
     marginTop: theme.spacing(2),
-    width: "98%",
+    width:'100%',
+
   },
 
   header: {
     color: "orange",
     backgroundColor: "#092c09",
     textAlign: "center",
-    width: "100%",
+    width:'100%',
     padding: theme.spacing(2),
     borderRadius: "2%",
     display: "flex",
@@ -42,9 +44,16 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
   },
   content: {
-    margin: theme.spacing(2),
+    margin: 0,
+    width:'100%',
+
     border: "white",
-    width: "98%",
+  },
+  container: {
+
+    width:'100%',
+
+    border: "white",
   },
 }));
 
@@ -116,7 +125,7 @@ export const Compose = () => {
         <span>New Email</span>
         <SendIcon className={classes.icon} onClick={onSubmit} />
       </div>
-      <div style={{ width: "98%" }}>
+      <div  className={classes.container}>
         <TextField
           error={fromError}
           helperText={fromErrorMessage}

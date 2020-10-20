@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
+
   centered: {
     position: "fixed",
     top: "50%",
@@ -34,7 +35,14 @@ const useStyles = makeStyles((theme) => ({
     left: "50%",
     transform: " translate(-50%, 0)",
     color: "#092c09",
-    fontSize: 40,
+    fontSize: '1.2rem',
+    "@media (max-width:600px)": {
+      padding:0,
+      fontSize: '1.2rem'
+    },
+    "@media (min-width:600px)": {
+      fontSize: "1.5rem",
+    },
   },
   pagination: {
     "& > *": {
@@ -42,7 +50,9 @@ const useStyles = makeStyles((theme) => ({
     },
     position: "fixed",
     bottom: 25,
-    left: "40%",
+    display:'flex',
+    justifyContent:'center',
+    width: '-webkit-fill-available'
   },
 }));
 
@@ -92,7 +102,7 @@ export const EmailList = () => {
       )}
       <div className={classes.pagination}>
         <Pagination
-          count={5}
+          count={3}
           variant="outlined"
           shape="rounded"
           onChange={(e, page) => setPage(page)}
